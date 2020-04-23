@@ -1,0 +1,28 @@
+{
+    "snapshots": [
+        {
+            "source": "googleCrawlerStructure",
+            "type": "google",
+            "testUser": "prancer-test-account",
+            "project-id": "disco-vista-260919",
+            "nodes": [
+                {
+                    "type": "projects.zones.clusters.get",
+                    "collection": "kubernetes.clusters",
+                    "validate": true,
+                    "snapshotId": "GOOGLE_CLUSTER_1",
+                    "path": "v1/projects/disco-vista-260919/zones/asia-east1-b/clusters/standard-cluster-1",
+                    "status": "active"
+                },
+                {
+                    "type": "projects.zones.clusters.get",
+                    "collection": "kubernetes.clusters",
+                    "validate": true,
+                    "snapshotId": "GOOGLE_CLUSTER_2",
+                    "path": "v1/projects/disco-vista-260919/zones/us-central1-c/clusters/cluster-1",
+                    "status": "active"
+                }
+            ]
+        }
+    ]
+}
