@@ -1,10 +1,8 @@
 {
   "snapshots": [
     {
-      "source": "googleCrawlerStructure",
       "type": "google",
-      "testUser": "prancer-test-account",
-      "project-id": "disco-vista-260919",
+      "connectorUser": "USER_1",
       "nodes": [
         {
           "masterSnapshotId": "GOOGLE_CLUSTER_",
