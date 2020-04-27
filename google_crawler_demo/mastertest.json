@@ -1,0 +1,155 @@
+{
+    "testSet": [
+        {
+            "testName": "TEST_GOOGLE",
+            "version": "0.1",
+            "cases": [
+                {
+                    "masterTestId": "GOOGLE_TEST_300",
+                    "type": "rego",
+                    "rule": "file(google_cluster_300.rego)",
+                    "eval": "data.rule.rulepass",
+                    "masterSnapshotId": [
+                        "GOOGLE_CLUSTER_"
+                    ],
+                    "title": "GCP Kubernetes Engine Cluster Nodes does not have default Service account for Project access",
+                    "description": "This policy identifies Kubernetes Engine Cluster Nodes which have default Service account for Project access. By default, Kubernetes Engine nodes are given the Compute Engine default service account. This account has broad access and more permissions than are required to run your Kubernetes Engine cluster. You should create and use a least privileged service account to run your Kubernetes Engine cluster instead of using the Compute Engine default service account. If you are not creating a separate service account for your nodes, you should limit the scopes of the node service account to reduce the possibility of a privilege escalation in an attack.",
+                    "tags": [
+                        {
+                            "cloud": "GCP",
+                            "compliance": [
+                                "CIS",
+                                "CSA",
+                                "HIPAA",
+                                "ISO"
+                            ],
+                            "service": [
+                                "Kubernetes Engine"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "masterTestId": "GOOGLE_TEST_302",
+                    "type": "rego",
+                    "rule": "file(google_cluster_302.rego)",
+                    "eval": "data.rule.rulepass",
+                    "masterSnapshotId": [
+                        "GOOGLE_CLUSTER_"
+                    ],
+                    "title": "GCP Kubernetes Engine Clusters Client Certificate is set to enabled",
+                    "description": "This policy identifies Kubernetes Engine Clusters which have enabled Client Certificate. A client certificate is a base64-encoded public certificate used by clients to authenticate to the cluster endpoint. Enabling Client Certificate will provide more security to authenticate users to the cluster.",
+                    "tags": [
+                        {
+                            "cloud": "GCP",
+                            "compliance": [
+                                "CIS",
+                                "CSA",
+                                "HIPAA",
+                                "ISO",
+                                "NIST",
+                                "PCI"
+                            ],
+                            "service": [
+                                "Kubernetes Engine"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "masterTestId": "GOOGLE_TEST_269",
+                    "type": "rego",
+                    "rule": "file(google_firewall_269.rego)",
+                    "eval": "data.rule.rulepass",
+                    "masterSnapshotId": [
+                        "GOOGLE_FIREWALL_"
+                    ],
+                    "title": "Default Firewall rule should not have any rules (except http and https)",
+                    "description": "Checks to ensure that the default Firewall rule should not have any (non http, https) rules. The default Firewall rules will apply all instances by default in the absence of specific custom rules with higher priority. It is a safe practice to not have these rules in the default Firewall.",
+                    "tags": [
+                        {
+                            "cloud": "GCP",
+                            "compliance": [
+                                "CSA CCM v3.0.1-DSI-02",
+                                "CSA CCM v3.0.1-IAM-07",
+                                "CSA CCM v3.0.1-IVS-06",
+                                "CSA CCM v3.0.1-IVS-08",
+                                "HIPAA-164.312(e)(2)(i)",
+                                "ISO 27001:2013-A.13.1.1",
+                                "ISO 27001:2013-A.14.1.3",
+                                "ISO 27001:2013-A.16.1.4",
+                                "ISO 27001:2013-A.18.1.3",
+                                "NIST 800-53 Rev4-SC-7 (19)",
+                                "NIST 800-53 Rev4-SI-4 (4)",
+                                "PCI DSS v3.2-2.1",
+                                "CSA",
+                                "HIPAA",
+                                "ISO",
+                                "NIST",
+                                "PCI"
+                            ],
+                            "service": [
+                                "Networking",
+                                "Virtual Private Cloud (VPC)",
+                                "firewalls"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "masterTestId": "GOOGLE_TEST_346",
+                    "type": "rego",
+                    "rule": "file(google_network_346.rego)",
+                    "eval": "data.rule.rulepass",
+                    "masterSnapshotId": [
+                        "GOOGLE_NETWORK_"
+                    ],
+                    "title": "GCP project is configured with legacy network",
+                    "description": "This policy identifies the projects which have configured with legacy networks. Legacy networks have a single network IPv4 prefix range and a single gateway IP address for the whole network. Subnetworks cannot be created in a legacy network. Legacy networks can have an impact on high network traffic projects and subject to the single point of failure.",
+                    "tags": [
+                        {
+                            "cloud": "GCP",
+                            "compliance": [
+                                "CIS v1.0.0 (GCP)-3.2",
+                                "ISO 27001:2013-A.13.1.3",
+                                "ISO 27001:2013-A.14.1.3",
+                                "CIS",
+                                "ISO"
+                            ],
+                            "service": [
+                                "Networking",
+                                "Virtual Private Cloud (VPC)"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "masterTestId": "GOOGLE_TEST_341",
+                    "type": "rego",
+                    "rule": "file(google_instance_341.rego)",
+                    "eval": "data.rule.rulepass",
+                    "masterSnapshotId": [
+                        "GOOGLE_INSTANCE_"
+                    ],
+                    "title": "GCP VM instances have block project-wide SSH keys feature disabled",
+                    "description": "This policy identifies VM instances which have block project-wide SSH keys feature disabled. Project-wide SSH keys are stored in Compute/Project-metadata. Project-wide SSH keys can be used to login into all the instances within a project. Using project-wide SSH keys eases the SSH key management but if compromised, poses the security risk which can impact all the instances within a project. It is recommended to use Instance specific SSH keys which can limit the attack surface if the SSH keys are compromised.",
+                    "tags": [
+                        {
+                            "cloud": "GCP",
+                            "compliance": [
+                                "CIS v1.0.0 (GCP)-4.2",
+                                "ISO 27001:2013-A.14.1.2",
+                                "ISO 27001:2013-A.18.1.3",
+                                "ISO",
+                                "CIS"
+                            ],
+                            "service": [
+                                "Compute"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
